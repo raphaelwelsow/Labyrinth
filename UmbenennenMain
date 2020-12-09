@@ -1,0 +1,22 @@
+import java.awt.event.KeyEvent;
+import ledControl.BoardController;
+import ledControl.LedConfiguration;
+import ledControl.gui.KeyBuffer;
+
+public class UmbenennenMain {
+
+	public static void main(String[] args) {
+		//grÃ¶ÃŸeres Board falls gewÃ¼nscht
+		BoardController.getBoardController(.LED_20x20_EMULATOR);
+		BoardController controller = BoardController.getBoardController();
+		
+		//Das Objekt in der anderen Klasse wird erstellt
+		EineWeitereKlasse ewk = new EineWeitereKlasse(controller);
+		
+		//controller.setBoardColor(72,61,127);
+		controller.addColor(1, 3, 127,127,127);
+		controller.updateBoard();
+
+	}
+
+}
