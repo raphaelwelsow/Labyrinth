@@ -1,17 +1,17 @@
-public class labyrintheList {
-	labyrintheElement head;
+public class labyrinthList {
+	labyrinthElement head;
 	
-	public void addLabyrinthe(labyrintheElement labyrinthe) {
+	public void addLabyrinthe(labyrinthElement labyrinth) {
 		if(this.head == null) {
-			this.head = labyrinthe;
+			this.head = labyrinth;
 		}
 		else {
-			labyrintheElement node = head;
+			labyrinthElement node = head;
 			
 			while(node.getNext()!= null) {
 				node = node.getNext();
 			}
-			node.setNext(labyrinthe);
+			node.setNext(labyrinth);
 		}
 	}
 	
@@ -20,7 +20,7 @@ public class labyrintheList {
 			return 0;
 			
 		}else {
-			labyrintheElement node = head;
+			labyrinthElement node = head;
 			 int counter= 0;
 			 
 			while(node != null) {
