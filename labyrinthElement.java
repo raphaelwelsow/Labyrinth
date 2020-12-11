@@ -1,23 +1,23 @@
-public class labyrintheElement {
-	private int labyrinthe[][];
+public class labyrinthElement {
+	private int labyrinth[][];
 	private String name;
 	private int level;
-	private labyrintheElement next;
+	private labyrinthElement next;
 	
-	public labyrintheElement(int labyrinthe[][],int level, String name) {
-		this.labyrinthe = labyrinthe;
+	public labyrinthElement(int labyrinth[][],int level, String name) {
+		this.labyrinth = labyrinth;
 		this.level=level;
 		this.name=name;
 		
 	}
 	
 	public int getPositionValue(int x,int y) {
-		if(this.labyrinthe[y][x] >3 || this.labyrinthe[y][x] <0) {
-			System.out.println("Fehler!: Die Position: (" +x+ "/" +y +") hat einen Wert, der größer 3 oder kleiner null ist! ");
+		if(this.labyrinth[y][x] >3 || this.labyrinth[y][x] <0) {
+			System.out.println("Fehler!: Die Position: (" +x+ "/" +y +") hat einen Wert, der grÃ¶ÃŸer 3 oder kleiner null ist! ");
 			return 0;
 		}
 		else {
-		return this.labyrinthe[y][x];
+		return this.labyrinth[y][x];
 		}
 	}
 	
@@ -44,12 +44,12 @@ public class labyrintheElement {
 	}
 	
 
-	public int[][] getLabyrinthe() {
-		return labyrinthe;
+	public int[][] getLabyrinth() {
+		return labyrinth;
 	}
 
-	public void setLabyrinthe(int[][] labyrinthe) {
-		this.labyrinthe = labyrinthe;
+	public void setLabyrinthe(int[][] labyrinth) {
+		this.labyrinth = labyrinth;
 	}
 
 	public String getName() {
@@ -68,11 +68,11 @@ public class labyrintheElement {
 		this.level = level;
 	}
 
-	public labyrintheElement getNext() {
+	public labyrinthElement getNext() {
 		return next;
 	}
 
-	public void setNext(labyrintheElement next) {
+	public void setNext(labyrinthElement next) {
 		this.next = next;
 	}
 	
