@@ -21,6 +21,17 @@ public class labyrinthElement {
 		}
 	}
 	
+	public boolean zulaessig (int x, int y)
+	{
+		if (this.getPositionValue(x, y) != 0)
+		{
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	public void printLabyrinth() {
 		for(int z=0;z<=19;z++) {
 		
