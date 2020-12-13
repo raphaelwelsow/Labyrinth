@@ -33,3 +33,5 @@ public class labyrinthList {
 	}
 	
 }
+//Es fehlt noch eine getLab methode oder irgendwas in der Art, das den Zugriff in Umbenennen main ermöglicht
+// also .getObject oder so
