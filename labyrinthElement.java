@@ -1,10 +1,10 @@
-public class labyrinthElement {
+public class LabyrinthElement {
 	private int labyrinth[][];
 	private String name;
 	private int level;
-	private labyrinthElement next;
+	private LabyrinthElement next;
 	
-	public labyrinthElement(int labyrinth[][],int level, String name) {
+	public LabyrinthElement(int labyrinth[][],int level, String name) {
 		this.labyrinth = labyrinth;
 		this.level=level;
 		this.name=name;
@@ -21,18 +21,10 @@ public class labyrinthElement {
 		}
 	}
 	
-	public boolean zulaessig (int x, int y)
-	{
-		if (this.getPositionValue(x, y) != 0)
-		{
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
+	
 	
 	public void printLabyrinth() {
+		System.out.println(this.name +":");
 		for(int z=0;z<=19;z++) {
 		
 		for(int i=0;i<=19;i++) {
@@ -54,6 +46,36 @@ public class labyrinthElement {
 	}
 	}
 	
+	
+	public int[] getStart() {
+		for(int y=0;y < 20;y++) {
+			
+			for(int x=0;x < 20;x++) {
+				
+				if(this.getPositionValue(x, y)==2) {
+					
+				int rueckgarbe[] = {x,y};
+					return rueckgarbe;
+				}
+			}
+		}
+		return null;
+	}
+	
+	public int[] getEnd() {
+		for(int y=0;y < 20;y++) {
+			
+			for(int x=0;x < 20;x++) {
+				
+				if(this.getPositionValue(x, y)==3) {
+					
+				int rueckgarbe[] = {x,y};
+					return rueckgarbe;
+				}
+			}
+		}
+		return null;
+	}
 
 	public int[][] getLabyrinth() {
 		return labyrinth;
@@ -79,11 +101,11 @@ public class labyrinthElement {
 		this.level = level;
 	}
 
-	public labyrinthElement getNext() {
+	public LabyrinthElement getNext() {
 		return next;
 	}
 
-	public void setNext(labyrinthElement next) {
+	public void setNext(LabyrinthElement next) {
 		this.next = next;
 	}
 	
