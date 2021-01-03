@@ -54,8 +54,8 @@ public class LabyrinthElement {
 				
 				if(this.getPositionValue(x, y)==2) {
 					
-				int rueckgarbe[] = {x,y};
-					return rueckgarbe;
+				int rueckgabe[] = {x,y};
+					return rueckgabe;
 				}
 			}
 		}
@@ -69,8 +69,8 @@ public class LabyrinthElement {
 				
 				if(this.getPositionValue(x, y)==3) {
 					
-				int rueckgarbe[] = {x,y};
-					return rueckgarbe;
+				int rueckgabe[] = {x,y};
+					return rueckgabe;
 				}
 			}
 		}
