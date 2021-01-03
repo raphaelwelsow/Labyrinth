@@ -32,6 +32,27 @@ public class labyrinthList {
 		}
 	}
 	
+	
+		public LabyrinthElement getLabyrinth(int position) {
+		if(head == null) {
+			System.out.println("Fehler Kein Labyrinth vorhanden!");
+			return null;
+		}
+		LabyrinthElement node = head;
+		
+		for(int i=0; i<position;i++) {
+			if(node ==null) {
+				System.out.println("Kein Labyrinth an dieser Stelle vorhanden");
+				return null;
+			}
+			node = node.getNext();
+		}
+		return node;
+			
+		}
+		
+	}
+	
 }
 //Es fehlt noch eine getLab methode oder irgendwas in der Art, das den Zugriff in Umbenennen main ermöglicht
 // also .getObject oder so
