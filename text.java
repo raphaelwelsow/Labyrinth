@@ -1,15 +1,15 @@
 import ledControl.BoardController;
 import ledControl.LedConfiguration;
 
-public class text {
+public class Text {
 	
-	private static int[] color0 = {0,0,0}; // gibt die Farbe für 0,1,2,3 an
+	private static int[] color0 = {0,0,0}; // gibt die Farbe fÃ¼r 0,1,2,3 an
 	private static int[] color1 = {127,127,127};
 	private static int[] color2 = {0,127,127};
 	private static int[] color3 = {127,0,127};
 	
 	
-	private static void updateAnzeige(int anzeige[][]) { // bekommt ein int text als Matrix übergeben und gibt dieses aus
+	private static void updateAnzeige(int anzeige[][]) { // bekommt ein int text als Matrix Ã¼bergeben und gibt dieses aus
 		BoardController.getBoardController(LedConfiguration.LED_20x20_EMULATOR);
 		BoardController controller = BoardController.getBoardController();
 
@@ -48,7 +48,7 @@ public class text {
 		controller.sleep(1500);
 		}
 	
-	public static void erklärung() { // gibt auf dem Board die Spielerklärung aus
+	public static void erklÃ¤rung() { // gibt auf dem Board die SpielerklÃ¤rung aus
 		BoardController.getBoardController(LedConfiguration.LED_20x20_EMULATOR);
 		BoardController controller = BoardController.getBoardController();
 		
