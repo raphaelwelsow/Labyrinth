@@ -16,7 +16,7 @@ public class ShowLabyrinth {
 	static int colorPosition[] = {127,0,127};
 
 	
-	public static void showLabyrinth(labyrinthElement labyrinth) {
+	public static void showLabyrinth(LabyrinthElement labyrinth) {
 		BoardController.getBoardController(LedConfiguration.LED_20x20_EMULATOR);
 		BoardController controller = BoardController.getBoardController();
 		
@@ -46,13 +46,13 @@ public class ShowLabyrinth {
 	
 
 	
-	public static void updatePosition(int[] current, labyrinthElement labyrinth) {	
+	public static void updatePosition(int[] current, LabyrinthElement labyrinth) {	
 		updateOldPosition(labyrinth); // setzt erst die Alte Position richtig und dann die neue
 		updateCurrentPosition(current);
 		
 	}
 	
-	private static int[] getOldPosition(labyrinthElement labyrinth) { // gibt die alte Position des Spielers zurück
+	private static int[] getOldPosition(LabyrinthElement labyrinth) { // gibt die alte Position des Spielers zurück
 		if (oldPosition == null) {
 			for (int z = 0; z <= 19; z++) {
 
@@ -74,7 +74,7 @@ public class ShowLabyrinth {
 	
 	
 	
-	 private static void updateOldPosition(labyrinthElement labyrinth) { // gibt die alte Position des Spielers auf dem Board aus. (Die farbe)
+	 private static void updateOldPosition(LabyrinthElement labyrinth) { // gibt die alte Position des Spielers auf dem Board aus. (Die farbe)
 		BoardController.getBoardController(LedConfiguration.LED_20x20_EMULATOR);
 		BoardController controller = BoardController.getBoardController();
 		
