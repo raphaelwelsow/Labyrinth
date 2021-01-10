@@ -9,6 +9,7 @@ public class UmbenennenMain {
 	 private static BoardController controller;
 	 private static KeyBuffer buffer;
 	 private static int xPos, yPos;
+	 public int[]posi = new int[2];
 
 	public static void main(String[] args) {
 		//größeres Board falls gewünscht
@@ -22,7 +23,6 @@ public class UmbenennenMain {
 		controller.updateBoard();
 		
 
-		//ShowLabyrinth.showLabyrinth(lab2);
 
 		
 		
@@ -32,8 +32,10 @@ public class UmbenennenMain {
 		
 		//Startposition des Punktes festlegen
 		
-		xPos = 18; //woher kommt der Startwert?
-		yPos = 18; //woher kommt der Startwert?
+		xPos = LabyrinthElement.getStart[0]; //übergibt den Startwert (x) des Labyrinths
+		yPos = LabyrinthElement.getStart[1]; //übergitb den Startwert (y) des Labyrinths
+		!!!ShowLabyrinth.showLabyrinth(getLabyrinth());!!!
+
 		while (true) {
 			KeyEvent event = buffer.pop();
 			//der Buffer speichert das letzte Key-Event (also die letzte Tastatureingabe zwischen) und wird dann ausgelesen
@@ -84,9 +86,10 @@ public class UmbenennenMain {
 					}
 				}
 			}
-			controller.resetColors();
-			controller.setColor(xPos, yPos, 127,0,0);
-			controller.updateBoard();
+			//controller.resetColors();
+			//controller.setColor(xPos, yPos, 127,0,0);
+			//controller.updateBoard();
+			UpdatePosition(array);
 		}
 		
 	}
