@@ -1,18 +1,19 @@
-public class labyrinthList {
-	labyrinthElement head;
+public class LabyrinthList {
+	LabyrinthElement head;
 	
-	public void addLabyrinthe(labyrinthElement labyrinth) {
+	public void addLabyrinthe(LabyrinthElement labyrinth) {
 		if(this.head == null) {
 			this.head = labyrinth;
 		}
 		else {
-			labyrinthElement node = head;
+			LabyrinthElement node = head;
 			
 			while(node.getNext()!= null) {
 				node = node.getNext();
 			}
 			node.setNext(labyrinth);
 		}
+		System.out.println("Element " + labyrinth.getName() + "Wurde der Liste hinzugefügt!");
 	}
 	
 	public int getSize() {
@@ -20,7 +21,7 @@ public class labyrinthList {
 			return 0;
 			
 		}else {
-			labyrinthElement node = head;
+			LabyrinthElement node = head;
 			 int counter= 0;
 			 
 			while(node != null) {
@@ -53,6 +54,3 @@ public class labyrinthList {
 		
 	}
 	
-}
-//Es fehlt noch eine getLab methode oder irgendwas in der Art, das den Zugriff in Umbenennen main ermöglicht
-// also .getObject oder so
