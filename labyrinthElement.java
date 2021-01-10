@@ -108,15 +108,16 @@ public class LabyrinthElement {
 	public void setNext(LabyrinthElement next) {
 		this.next = next;
 	}
-	public boolean zulaessig (int x, int y)
+		
+	
+	public boolean zulaessig (int x, int y)	
  	{
- 		if (this.getPositionValue(x, y) != 0)
- 		{
- 			return true;
- 		}
- 		else {
- 			return false;
- 		}
+		if(x>19 || x<0 || y>19 || y<0) {
+			return false;
+		}
+		else {
+		return (this.getPositionValue(x, y) != 0);
+		}
  	}
 
 	
