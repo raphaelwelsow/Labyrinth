@@ -22,10 +22,12 @@ public class UmbenennenMain {
 		
 		//Startposition des Punktes festlegen
 		
-		LabyrinthElement aktLabyrinth = Sammlung.main.getLabyrinth(0);
+		LabyrinthElement aktLabyrinth = Sammlung.main.getLabyrinth(1);
 		posi = aktLabyrinth.getStart();//übergibt den Startwert (x) des Labyrinths
 		xPos = posi[0];
 		yPos = posi[1];
+		System.out.println(xPos);
+		System.out.println(yPos);
 		ShowLabyrinth.showLabyrinth(aktLabyrinth);
 
 		while (true) {
@@ -39,8 +41,8 @@ public class UmbenennenMain {
 				{
 					switch (event.getKeyCode()) {
 					case java.awt.event.KeyEvent.VK_UP:
-						int yPosU = yPos--;
-						if(yPos >= 0 && aktLabyrinth.zulaessig(xPos,yPosU) == true)
+						int yPosU = yPos;
+						if(yPos >= 0 && aktLabyrinth.zulaessig(xPos,-- yPosU) == true)
 						{
 							yPos--;
 							System.out.println(yPos);
@@ -48,8 +50,8 @@ public class UmbenennenMain {
 						break;
 						
 					case java.awt.event.KeyEvent.VK_DOWN:
-						int yPosD = yPos++;
-						if (yPos <= 19 && aktLabyrinth.zulaessig(xPos, yPosD)==true)
+						int yPosD = yPos;
+						if (yPos <= 19 && aktLabyrinth.zulaessig(xPos,++ yPosD)==true)
 						{
 							yPos++;
 							System.out.println(yPos);
@@ -57,8 +59,8 @@ public class UmbenennenMain {
 						break;
 						
 					case java.awt.event.KeyEvent.VK_LEFT:
-						int xPosL = xPos--;
-						if(xPos >= 0 && aktLabyrinth.zulaessig(xPosL, yPos)== true)
+						int xPosL = xPos;
+						if(xPos >= 0 && aktLabyrinth.zulaessig(-- xPosL, yPos)== true)
 						{
 							xPos--;
 							System.out.println(xPos);
@@ -66,8 +68,8 @@ public class UmbenennenMain {
 						break;
 						
 					case java.awt.event.KeyEvent.VK_RIGHT:
-						int xPosR = xPos++;
-						if(xPos <= 19 && aktLabyrinth.zulaessig(xPosR, yPos)== true)
+						int xPosR = xPos;
+						if(xPos <= 19 && aktLabyrinth.zulaessig(++ xPosR, yPos)== true)
 						{
 							xPos++;
 							System.out.println(xPos);
@@ -81,7 +83,8 @@ public class UmbenennenMain {
 			//controller.resetColors();
 			//controller.setColor(xPos, yPos, 127,0,0);
 			//controller.updateBoard();
-			ShowLabyrinth.updatePosition(posi, aktLabyrinth);
+			ShowLabyrinth.updatePosition(new int[]{xPos,yPos}, aktLabyrinth);
+			
 		}
 		
 	}
