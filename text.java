@@ -1,10 +1,10 @@
 import ledControl.BoardController;
 import ledControl.LedConfiguration;
 
-public class Text {
+public class text {
 	
 	private static int[] color0 = {0,0,0}; // gibt die Farbe für 0,1,2,3 an
-	private static int[] color1 = {127,127,127};
+	private static int[] color1 = {127,63,20};
 	private static int[] color2 = {0,127,127};
 	private static int[] color3 = {127,0,127};
 	
@@ -36,12 +36,32 @@ public class Text {
 	}
 	
 	
+	public static void showEnd(int value) {
+		BoardController.getBoardController(LedConfiguration.LED_20x20_EMULATOR);
+		BoardController controller = BoardController.getBoardController();
+		
+		if(value>3||value<0) {
+			System.out.println("Die Angabe bei showEnd ist zu hoch oder tief! Sie ist jetzt 1");
+			value=1;
+		}
+		
+		
+		for(int y=0;y<=19;y++) {
+			for(int x=0; x<=19;x++) {
+				textEnd[y][x]=value;
+			}
+		}
+		
+		updateAnzeige(textEnd);
+		
+	}
+	
 	
 	public static void showTeam() { // gibt auf dem board den Teamnamen aus
 		BoardController.getBoardController(LedConfiguration.LED_20x20_EMULATOR);
 		BoardController controller = BoardController.getBoardController();
 		
-		
+		text.showEnd(1);
 		updateAnzeige(teamText);
 		controller.sleep(1500);
 		updateAnzeige(umbenennenText);
@@ -52,7 +72,7 @@ public class Text {
 		BoardController.getBoardController(LedConfiguration.LED_20x20_EMULATOR);
 		BoardController controller = BoardController.getBoardController();
 		
-		
+		text.showEnd(2);
 		updateAnzeige(findeDenWegText);
 		controller.sleep(1500);
 		updateAnzeige(inDieText);
@@ -61,9 +81,33 @@ public class Text {
 		controller.sleep(1500);
 		updateAnzeige(beratungText);
 		controller.sleep(1500);
+		text.showEnd(2);
 		}
 		
 		
+	private static int[][] textEnd =  	{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+										{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
+	
+	
+	
 	private static int[][] findeDenWegText =  	{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 												 {0,1,1,1,0,1,0,0,1,0,1,1,0,0,1,1,1,0,0,0},
 												 {0,1,0,0,0,1,1,0,1,0,1,0,1,0,1,0,0,0,0,0},
@@ -194,26 +238,6 @@ public class Text {
 												 {0,0,0,1,0,0,1,0,1,1,1,0,1,0,0,1,0,0,0,0},
 												 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 												 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
+	
 
-	private static int[][] emptyText =  	{{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},						 
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-											 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
-
-									}
+}			
