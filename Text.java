@@ -66,7 +66,7 @@ public class Text {
 		controller.sleep(1500);
 		updateAnzeige(umbenennenText);
 		controller.sleep(1500);
-		text.showEnd(2);
+		Text.showEnd(2);
 		}
 	
 	
@@ -82,7 +82,7 @@ public class Text {
 		controller.sleep(1500);
 		updateAnzeige(beratungText);
 		controller.sleep(1500);
-		text.showEnd(2);
+		Text.showEnd(2);
 		}
 		
 		
