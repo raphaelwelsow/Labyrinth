@@ -1,12 +1,12 @@
 import ledControl.BoardController;
 import ledControl.LedConfiguration;
 
-public class text {
+public class Text {
 	
 	private static int[] color0 = {0,0,0}; // gibt die Farbe für 0,1,2,3 an
-	private static int[] color1 = {127,63,20};
+	private static int[] color1 = {127,0,127};
 	private static int[] color2 = {0,127,127};
-	private static int[] color3 = {127,0,127};
+	private static int[] color3 = {127,63,20};
 	
 	
 	private static void updateAnzeige(int anzeige[][]) { // bekommt ein int text als Matrix übergeben und gibt dieses aus
@@ -61,18 +61,19 @@ public class text {
 		BoardController.getBoardController(LedConfiguration.LED_20x20_EMULATOR);
 		BoardController controller = BoardController.getBoardController();
 		
-		text.showEnd(1);
+
 		updateAnzeige(teamText);
 		controller.sleep(1500);
 		updateAnzeige(umbenennenText);
 		controller.sleep(1500);
+		text.showEnd(2);
 		}
+	
+	
 	
 	public static void erklärung() { // gibt auf dem Board die Spielerklärung aus
 		BoardController.getBoardController(LedConfiguration.LED_20x20_EMULATOR);
 		BoardController controller = BoardController.getBoardController();
-		
-		text.showEnd(2);
 		updateAnzeige(findeDenWegText);
 		controller.sleep(1500);
 		updateAnzeige(inDieText);
