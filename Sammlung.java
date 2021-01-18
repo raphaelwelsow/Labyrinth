@@ -70,7 +70,7 @@ public class Sammlung {
 
 	static LabyrinthElement lab2 = new LabyrinthElement(labyrinth2, 2, "Snoop Doggs Labyrinth");
 	static LabyrinthElement lab1 = new LabyrinthElement(labyrinth1, 1, "labyrinth1");
-	static LabyrinthElement lab1 = new LabyrinthElement(labyrinth3, 1, "labyrinth3");
+	static LabyrinthElement lab3 = new LabyrinthElement(labyrinth3, 1, "labyrinth3");
 
 	public Sammlung() {
 
@@ -79,6 +79,7 @@ public class Sammlung {
 	public static void SammlungErstellen() {
 		main.addLabyrinthe(lab1);
 		main.addLabyrinthe(lab2);
+		main.addLabyrinthe(lab3);
 	}
 
 }
